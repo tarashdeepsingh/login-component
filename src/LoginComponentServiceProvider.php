@@ -3,7 +3,7 @@
 namespace Avalon\LrvLogin;
 
 use Illuminate\Support\ServiceProvider;
-use Avalon\LrvLogin\Src\Observers\UserObserver;
+use Avalon\LrvLogin\Observers\UserObserver;
 use App\Models\User;
 
 class LoginComponentServiceProvider extends ServiceProvider
