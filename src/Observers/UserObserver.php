@@ -1,8 +1,8 @@
 <?php
 
-namespace Avalon\LrvLogin\Src\Observers;
+namespace Avalon\LrvLogin\Observers;
 
-use Avalon\LrvLogin\Src\Services\EmailService;
+use Avalon\LrvLogin\Services\EmailService;
 use App\Models\User;
 
 class UserObserver
