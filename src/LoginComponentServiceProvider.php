@@ -48,6 +48,6 @@ class LoginComponentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/database/migrations/0001_01_01_000000_create_users_table.php' => $existingMigrationPath,
         ], 'migrations');
-        copy(__DIR__ . '/../database/migrations/0001_01_01_000000_create_users_table.php', $migrationFile);
+        copy(__DIR__ . '/../database/migrations/0001_01_01_000000_create_users_table.php', $existingMigrationPath);
     }
 }
