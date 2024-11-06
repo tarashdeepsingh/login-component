@@ -1,6 +1,6 @@
 <?php
 
-namespace Avalon\LrvLogin\Src\Services;
+namespace Avalon\LrvLogin\Services;
 use Illuminate\Support\Facades\Http;
 
 class EmailService
