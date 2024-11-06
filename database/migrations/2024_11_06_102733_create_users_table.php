@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::dropIfExists('users');
         // Retrieve fields from the config file
         $fields = config('custom_login.fields');
 
         // Create the 'users' table dynamically based on config fields
         Schema::create('users', function (Blueprint $table) use ($fields) {
             $table->id();
-
+            
             foreach ($fields as $fieldName => $fieldDetails) {
                 $type = $fieldDetails['type'];
                 $isRequired = $fieldDetails['required'] ?? false;
@@ -61,7 +62,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
     }
 };
