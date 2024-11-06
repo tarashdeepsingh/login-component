@@ -22,6 +22,7 @@ class LoginComponentServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../config/custom_login.php' => config_path('custom_login.php'),
         ], 'config');
+        copy(__DIR__ . '/../config/custom_login.php', config_path('custom_login.php'));
 
         // Publish views
         // $this->publishes([
@@ -39,15 +40,14 @@ class LoginComponentServiceProvider extends ServiceProvider
 
         // Check if the migration already exists
         $existingMigrationPath = database_path('migrations/0001_01_01_000000_create_users_table.php');
-
         if (file_exists($existingMigrationPath)) {
             // Delete it before publishing package migration
             unlink($existingMigrationPath); // This will delete the existing migration file
         }
-
         // Publish the migration from your package to the application's migration directory
         $this->publishes([
             __DIR__.'/database/migrations/0001_01_01_000000_create_users_table.php' => $existingMigrationPath,
         ], 'migrations');
+        copy(__DIR__ . '/../database/migrations/0001_01_01_000000_create_users_table.php', $migrationFile);
     }
 }
