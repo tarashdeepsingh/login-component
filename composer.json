@@ -1,0 +1,21 @@
+{
+    "name": "avalon/lrv_login",
+    "description": "A Laravel login package with email integration",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Avalon\\LrvLogin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Avalon\\LrvLogin\\LoginComponentServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0 || ^10.0 || ^11.0"
+    }
+}
